@@ -41,7 +41,7 @@ Here is a non-exhaustive list of features and guarantees provided by containers:
 
 ## Why do I care?
 
-The Nautilus project leverages containers and [Kubernetes](./02-kubes.md)
+The Nautilus project leverages containers and [Kubernetes](02-kubes.md)
 to run your code on their sprawling infrastructure. It is probably important to
 you that your code runs exactly as you want it, which is why you need to care!
 
