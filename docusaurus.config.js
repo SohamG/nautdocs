@@ -5,7 +5,12 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import simplePlantUML from '@akebifiky/remark-simple-plantuml';
+// import rehypeRaw from 'rehype-raw';
 
+// const rehypeRawOpts = {
+//     passThrough: ['mdxJsxFlowElement', 'mdxjsEsm']
+// };
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
@@ -46,6 +51,8 @@ const config = {
         docs: {
 	  routeBasePath: '/',
           sidebarPath: './sidebars.js',
+	    remarkPlugins: [simplePlantUML],
+	    // rehypePlugins: [[rehypeRaw, rehypeRawOpts]],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:

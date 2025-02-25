@@ -28,6 +28,47 @@ Now, I want to run my program on a more powerful server for performance gains.
 
 These are some of the problems containers solve.
 
+```plantuml Containers
+!theme cerulean-outline
+node OS
+node other [
+  Other Services
+]
+node docker
+node prog1 [
+     my code
+
+     ---
+
+     python3.6
+
+     ---
+
+     numpy 6.9
+]
+
+node prog2 [
+   other code
+
+   ---
+
+   python 3.12
+
+   ---
+
+   tensorflow
+]
+
+OS -u-> docker : Runs
+OS -u-> other
+
+docker -u-> prog1 
+docker -u-> prog2 
+
+prog1 .r. prog2 : Isolated
+
+```
+
 ### Container Guarantees
 
 Here is a non-exhaustive list of features and guarantees provided by containers:
@@ -41,7 +82,7 @@ Here is a non-exhaustive list of features and guarantees provided by containers:
 
 ## Why do I care?
 
-The Nautilus project leverages containers and [Kubernetes](02-kubes.md)
+The Nautilus project leverages containers and [Kubernetes](./02-kubes.mdx)
 to run your code on their sprawling infrastructure. It is probably important to
 you that your code runs exactly as you want it, which is why you need to care!
 
